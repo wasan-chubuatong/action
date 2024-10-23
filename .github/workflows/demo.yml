@@ -22,3 +22,8 @@ jobs:
     needs: Explore-GitHub-Actions
     steps:
       - run: echo "🚀 The deploy job is now starting..."
+      - name: Access Secret
+        run: |
+          echo "The secret value is $MY_SECRET_KEY"
+        env:
+          MY_SECRET_KEY: ${{ secrets.MY_SECRET_KEY }}
